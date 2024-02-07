@@ -19,6 +19,6 @@ No, having 100% code coverage doesn't mean your code is bug-free. Code coverage 
 
 ## 2.
 ### Suppose that after writing the CreateProductFunctionalTest.java along with the corresponding test case, you were asked to create another functional test suite that verifies the number of items in the product list. You decided to create a new Java class similar to the prior functional test suites with the same setup procedures and instance variables.
-**Identify the potential clean code issues, explain the reasons, and suggest possible improvements to make the code cleaner!**
+**Identify the potential clean code issues, explain the reasons, and suggest possible improvements to make the code cleaner!** \
 One potential clean code issue is the duplication of setup procedures and instance variables in the new functional test suite. Repeating these setup steps violates the DRY (Don't Repeat Yourself) principle, making the code less maintainable and prone to errors.
 To improve the cleanliness and maintainability of the code, I can refactor the common setup procedures and instance variables into a shared parent class or utility methods. By centralizing common functionality, I can avoid redundancy and ensure consistency across different test suites.
