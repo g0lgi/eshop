@@ -1,14 +1,16 @@
 package id.ac.ui.cs.advprog.eshop.repository;
 
 import id.ac.ui.cs.advprog.eshop.model.Product;
-import org. junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito. junit. jupiter.MockitoExtension;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
@@ -56,5 +58,38 @@ class ProductRepositoryTest {
         savedProduct = productIterator.next();
         assertEquals(product2.getProductId(), savedProduct.getProductId());
         assertFalse(productIterator.hasNext());
+    }
+    @Test
+    public void testEditProduct() {
+        Product product = new Product();
+        product.setProductName("Edit Test");
+        product.setProductQuantity(5);
+        productRepository.create(product);
+        // Edit Product
+        Product updatedProduct = new Product();
+        updatedProduct.setProductId(product.getProductId());
+        updatedProduct.setProductName("Product New");
+        updatedProduct.setProductQuantity(-5);
+        Product editedProduct = productRepository.edit(updatedProduct);
+        // Assert Test
+        assertNotNull(editedProduct);
+        assertEquals("Product New", editedProduct.getProductName());
+        assertEquals(-5, editedProduct.getProductQuantity());
+    }
+
+    @Test
+    public void testDeleteProduct() {
+        Product product = new Product();
+        product.setProductName("Delete Test");
+        product.setProductQuantity(-5);
+
+        productRepository.create(product);
+        productRepository.delete(Integer.parseInt(product.getProductId()));
+
+        // Ensure the product is no longer in the repository
+        Iterator<Product> productIterator = productRepository.findAll();
+        List<Product> allProduct = new ArrayList<>();
+        productIterator.forEachRemaining(allProduct::add);
+        assertEquals(allProduct.size(), 0);
     }
 }
