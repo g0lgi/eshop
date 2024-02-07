@@ -8,13 +8,13 @@ As part of my efforts in adhering to clean code principles, among other things I
 
 # Reflection 2
 ## 1.
-**After writing the unit test, how do you feel?**
-I feel tired.
-**How many unit tests should be made in a class?**
-The number of unit tests needed for a class can vary depending on factors such as the complexity of the class, the number of methods it contains, and the different scenarios it needs to handle. However, there's no strict rule for the exact number of unit tests that should be created for a class. The focus should be on ensuring that the tests adequately cover the behavior of the class under various conditions.
-**How to make sure that our unit tests are enough to verify our program?**
-They should cover various scenarios, like edge cases and typical usage patterns.
-**It would be good if you learned about code coverage. Code coverage is a metric that can help you understand how much of your source is tested. If you have 100% code coverage, does that mean your code has no bugs or errors?**
+**After writing the unit test, how do you feel?** \
+I feel tired. \
+**How many unit tests should be made in a class?** \
+The number of unit tests needed for a class can vary depending on factors such as the complexity of the class, the number of methods it contains, and the different scenarios it needs to handle. However, there's no strict rule for the exact number of unit tests that should be created for a class. The focus should be on ensuring that the tests adequately cover the behavior of the class under various conditions. \
+**How to make sure that our unit tests are enough to verify our program?** \
+They should cover various scenarios, like edge cases and typical usage patterns. \
+**It would be good if you learned about code coverage. Code coverage is a metric that can help you understand how much of your source is tested. If you have 100% code coverage, does that mean your code has no bugs or errors?** \
 No, having 100% code coverage doesn't mean your code is bug-free. Code coverage measures how much of your source code is executed by your tests. While high code coverage indicates that most parts of your code are being tested, it doesn't guarantee that all possible scenarios and edge cases are covered. It's still possible to have bugs in untested code paths or due to incorrect assumptions in the tests themselves.
 
 ## 2.
