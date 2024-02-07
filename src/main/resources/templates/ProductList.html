@@ -16,7 +16,8 @@
         <tr>
             <th scope="col">Product Name</th>
             <th scope="col">Quantity</th>
-            <th scope="col">Actions</th> <!-- Add a new column for actions -->
+            <th scope="col">Edit</th> <!-- Add a new column for actions -->
+            <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +27,9 @@
             <td>
                 <a th:href="@{/product/edit/{id}(id=${product.productId})}" class="btn btn-primary btn-sm">Edit</a>
 
+            </td>
+            <td>
+            <a th:href="@{/product/delete/{id}(id=${product.productId})}" class="btn btn-primary btn-sm">Delete</a>
             </td>
         </tr>
         </tbody>

@@ -6,4 +6,6 @@ public interface ProductService {
     public List<Product> findAll();
     public Product findProduct(int productId);
     public void edit(Product product);
+    public void delete(int index);
+    public void deleteByProductId(int id);
 }
