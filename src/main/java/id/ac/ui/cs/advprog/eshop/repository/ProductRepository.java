@@ -28,4 +28,7 @@ public class ProductRepository {
         }
         return null;
     }
+    public void delete(int index){
+        productData.remove(index);
+    }
 }
