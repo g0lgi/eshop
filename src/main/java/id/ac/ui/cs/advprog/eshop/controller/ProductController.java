@@ -1,7 +1,5 @@
 package id.ac.ui.cs.advprog.eshop.controller;
-import id.ac.ui.cs.advprog.eshop.model.Car;
 import id.ac.ui.cs.advprog.eshop.model.Product;
-import id.ac.ui.cs.advprog.eshop.service.CarServiceImpl;
 import id.ac.ui.cs.advprog.eshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,7 +34,7 @@ public class ProductController {
     }
     @GetMapping(value = "/delete/{id}")
     public String deleteProductPage(Model model, @PathVariable("id") String productId) {
-        service.deleteByProductId(Integer.parseInt(productId));
+        service.delete(Integer.parseInt(productId));
         return "redirect:../list";
     }
     @GetMapping("/edit/{id}")
