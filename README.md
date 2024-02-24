@@ -28,3 +28,22 @@ To improve the cleanliness and maintainability of the code, I can refactor the c
 I used SonarCloud, and it only gave me 1 code quality issue, which was that the products table html code didn't contain a description. So I added one using <caption>
 ## 2. Look at your CI/CD workflows (GitHub)/pipelines (GitLab). Do you think the current implementation has met the definition of Continuous Integration and Continuous Deployment? Explain the reasons!
 Yes, CI, is handled by my ci.yml file. which automates testing every new push. CD is handled by Koyeb, my PaaS of choice, which I have set to automatically deploy every new push
+
+
+# Tutorial 3
+## 1. Explain what principles you apply to your project!
+I applied the principles of SRP and DIP to my project, by separating CarController class from ProductController into its own file. Doing this accomplishes applying both principles at once, as now CarController and ProductController are separate classes which each serve one responsibility. Meanwhile, DIP is also adhered to now, as previously CarController extends ProductController.
+
+## 2. Explain the advantages of applying SOLID principles to your project with examples.
+  - SRP: It becomes easier to maintain and reason about the code when each class has a single responsibility, enabling us to modify each component independently, such as with the CarController and ProductController classes.
+  - OCP: Similar to SRP, by designing modules to be open for extension and closed for modification, you can add new features without altering existing code.
+  - LSP: Switching between implementations are easier.
+  - ISP: It is easier for us to know which methods to implement and use.
+  - DIP: The project is more flexible.
+
+## 3. Explain the disadvantages of not applying SOLID principles to your project with examples.
+  - SRP: When a class takes on multiple responsibilities, it becomes harder to maintain and understand.
+  - OCP: Difficult to extend code without modifying existing components.
+  - LSP:  Can lead to unexpected behavior when substituting subclasses for superclasses.
+  - ISP: Unnecessary methods may be implemented, leading to code bloat.
+  - DIP: The system is less flexible.
