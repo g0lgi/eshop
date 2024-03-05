@@ -47,3 +47,30 @@ I applied the principles of SRP and DIP to my project, by separating CarControll
   - LSP:  Can lead to unexpected behavior when substituting subclasses for superclasses.
   - ISP: Unnecessary methods may be implemented, leading to code bloat.
   - DIP: The system is less flexible.
+
+# Tutorial 4
+## 1. Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests.
+
+**• Are my feedback cycles as fast as I would like them? When do I get
+warned about bugs, and is there any practical way to make that happen
+sooner?** \
+Yes, they are pretty fast, and I haven't found a way to make them substantially faster.
+**• Is there some way that I could write faster integration tests that would
+get me feedback quicker?** \
+Not that I am aware of.
+**• Can I run a subset of the full test suite when I need to?** \
+Yes, I have tests for each class in the model, repository, and service folders.
+**• Am I spending too much time waiting for tests to run, and thus less time
+in a productive flow state?** \
+Not really, they run in seconds.
+
+## 2. You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests.
+**Fast: The tests run as fast as possible so it can be run without interrupting your
+workflow.** Yes, they run in seconds
+**Isolated/Independent: A test case must not interfere, change the state of functions,
+or dependent to other test cases.** Yes, they merely test their function
+**Repeatable: Tests must be able to run repeatedly, with consistent result.** Yes
+**Self-Validating: Tests must be self-validating (have strict and correct assertions to
+pass/fail).** Yes
+**Thorough/Timely: Tests must cover all happy paths and unhappy paths. Cover all
+possibility of results and errors. Tests must be designed before coding.** Yes, as can be seen through my commits, which is RED first and then GREEN.
